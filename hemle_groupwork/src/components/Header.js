@@ -1,29 +1,31 @@
-import React from "react"
-import logo from "../assets/tools/logo.png"
-
-//import {FaSearch} from "react-icons/fa";
-//import {World} from "react-icons/md";
-//import {AiOutlineDown} from "react-icons/ai";
+import React from "react";
+import {FaSearch} from "react-icons/fa";
+import {MdLanguage} from "react-icons/md";
+import {AiOutlineDown} from "react-icons/ai";
+import logo1 from "../assets/Logo_Hemlè-V2-39.svg";
+import "./Header.css"
 
 const Header = () => {
-  return (
-    <nav>
-      <img src={logo} alt="Hemle's logo"/>
-      
-      <div>
-        <ul>
-          <a href='?v#'> <li> Acceuil </li> </a>
-          <a href='?v#'> <li> Prestation </li> </a>
-          <a href='?v#'> <li> Nos clients </li> </a>
-          <a href='?v#'> <li> A propos </li> </a>
-        </ul>
-      </div>
-
-      <div id="navtools">
-        <a href="?f=l#" alt="link to connect"> <button> Se connecter </button> </a>
-      </div>
-    </nav>
-  );
+    //const [open, setOpen] = useState(false);
+    return(
+        <header>
+            <img className={'logo'} alt={'Logo Hemlè'} src={logo1}/>
+            <ul className={'items'}>
+                <li>ACCUEIL</li>
+                <li className={'prestation'}>
+                    <p>PRESTATIONS</p>
+                    <AiOutlineDown/>
+                </li>
+                <li>NOS CLIENTS </li>
+                <a href={'#'}> <li className={'prestation'}>A PROPOS</li> </a>
+            </ul>
+            <div className={'button'}>
+                <FaSearch className={'buttonchild'} size='1rem'/>
+                <MdLanguage className={'buttonchild'} size='1.5rem'/>
+                <button className={'buttonchild1'}>SE CONNECTER</button>
+            </div>
+        </header>
+    )
 }
 
 export default Header;
